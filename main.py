@@ -4,10 +4,10 @@ pygame.init()
 #graphic variables
 screen = pygame.display.set_mode((700, 700))
 pygame.display.set_caption("The queens app")
-logo = pygame.image.load('./8-QUEENS-Project/images/logo.png')
-queenIcon = pygame.image.load('./8-QUEENS-Project/images/piesa.png')
-blackBoard = pygame.image.load('./8-QUEENS-Project/images/black.png')
-whiteBoard = pygame.image.load('./8-QUEENS-Project/images/white.png')
+logo = pygame.image.load('8-QUEENS-Project/images/logo.png')
+queenIcon = pygame.image.load('8-QUEENS-Project/images/piesa.png')
+blackBoard = pygame.image.load('8-QUEENS-Project/images/black.png')
+whiteBoard = pygame.image.load('8-QUEENS-Project/images/white.png')
 #chess table
 chessTable = [['w','b','w','b','w','b','w','b'],
               ['b','w','b','w','b','w','b','w'],
