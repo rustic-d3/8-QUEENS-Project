@@ -4,10 +4,10 @@ pygame.init()
 #graphic variables
 screen = pygame.display.set_mode((700, 700))
 pygame.display.set_caption("The queens app")
-logo = pygame.image.load('8-QUEENS-Project/images/logo.png')
-queenIcon = pygame.image.load('8-QUEENS-Project/images/piesa.png')
-blackBoard = pygame.image.load('8-QUEENS-Project/images/black.png')
-whiteBoard = pygame.image.load('8-QUEENS-Project/images/white.png')
+logo = pygame.image.load('./images/logo.png')
+queenIcon = pygame.image.load('./images/piesa.png')
+blackBoard = pygame.image.load('./images/black.png')
+whiteBoard = pygame.image.load('./images/white.png')
 #chess table
 chessTable = [['w','b','w','b','w','b','w','b'],
               ['b','w','b','w','b','w','b','w'],
@@ -32,6 +32,25 @@ def board(piece, x, y):
     if piece == 'b':
         screen.blit(blackBoard, (x, y))
 
+def placeboard(x, y, chess):
+    for i in chess:
+        for j in  i:
+            if j == 'b':
+                board(j, x, y)
+                if x < 700:
+                    x+=87.5
+                if x == 700:
+                    x = 0
+                    y+=87.5
+            if j == 'w':
+                board(j, x, y)
+                if x < 700:
+                    x+=87.5
+                if x == 700:
+                    x = 0
+                    y+=87.5
+
+
 
 pygame.display.set_icon(logo)
 
@@ -42,31 +61,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    player()
-
 #chess board placement
-
-    for i in chessTable:
-        for j in  i:
-            if j == 'b':
-                board(j, initCoordinatesX, initCoordinatesY)
-                if initCoordinatesX < 700:
-                    initCoordinatesX+=87.5
-                if initCoordinatesX == 700:
-                    initCoordinatesX = 0
-                    initCoordinatesY+=87.5
-            if j == 'w':
-                board(j, initCoordinatesX, initCoordinatesY)
-                if initCoordinatesX < 700:
-                    initCoordinatesX+=87.5
-                if initCoordinatesX == 700:
-                    initCoordinatesX = 0
-                    initCoordinatesY+=87.5
-
-            
-
-
-
-
-
+    placeboard(initCoordinatesX, initCoordinatesY, chessTable)            
+    
     pygame.display.update()
