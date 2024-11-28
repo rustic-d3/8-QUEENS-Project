@@ -8,9 +8,9 @@ function App() {
 
   return (
     <>
-      <div>hello world</div>
+      <div>hello, this is my queen app</div>
     </>
   )
 }
 
-export default App
+export default App;
