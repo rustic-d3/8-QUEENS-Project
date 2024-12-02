@@ -1,0 +1,23 @@
+#chessboard {
+    width: 600px;
+    height: 600px;
+    background-color: red;
+    display:grid;
+    grid-template-columns: repeat(8, 75px);
+    grid-template-rows: repeat(8, 75px);
+    box-shadow: 5px 5px 20px;
+    
+    
+}
+
+.white {
+    background-image: url("../assets/images/white.jpg");
+    background-size: cover;
+
+}
+
+.black{
+    background-image: url("../assets/images/black.jpg");
+    background-size: cover;
+
+}
