@@ -9,15 +9,3 @@
     
     
 }
-
-.white {
-    background-image: url("../assets/images/white.jpg");
-    background-size: cover;
-
-}
-
-.black{
-    background-image: url("../assets/images/black.jpg");
-    background-size: cover;
-
-}
