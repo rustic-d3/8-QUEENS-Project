@@ -6,6 +6,17 @@
     grid-template-columns: repeat(8, 75px);
     grid-template-rows: repeat(8, 75px);
     box-shadow: 5px 5px 20px;
+    animation: circular-float 5s linear infinite;    
     
-    
+}
+
+@keyframes circular-float {
+    from {
+        transform: rotate(0deg) translateY(-12px) rotate(0deg);
+
+    }
+    to {
+        transform: rotate(360deg) translateY(-12px) rotate(-360deg);
+    }
+
 }
