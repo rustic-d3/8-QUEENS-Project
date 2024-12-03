@@ -1,0 +1,6 @@
+.queen {
+    background-image: url("../assets/images/queen.png");
+    width: 75px;
+    height: 75px;
+    background-size: cover;
+}

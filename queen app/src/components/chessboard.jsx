@@ -1,14 +1,23 @@
 import './chessboard.css'
 import Tiles from './Tiles';
 
-const verticalAxis = ["1", "2", "3", "4", "5", "6", "7", "8"];
-const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
+let placement = [[1,0,0,0,0,0,0,0],
+                 [0,1,0,0,0,0,0,0],
+                 [0,0,1,0,0,0,0,0],
+                 [0,0,0,1,0,0,0,0],
+                 [0,0,0,0,1,0,0,0],
+                 [0,0,0,0,0,1,0,0],
+                 [0,0,0,0,0,0,1,0],
+                 [0,0,0,0,0,0,0,1]
+                ]
+
 function Chessboard(){
     let board = [];
-    for(let i = verticalAxis.length-1; i>=0; i--) {
-        for(let j = 0; j < horizontalAxis.length; j++) {
+    for(let i = 0; i<8; i++) {
+        for(let j = 0; j < 8; j++) {
             const sum = i+j;
-            board.push(<Tiles number={sum}/>)
+            const position = placement[i][j];
+            board.push(<Tiles number={sum} queen = {position}/>)
         }
     }
 
