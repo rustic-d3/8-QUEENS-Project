@@ -6,7 +6,7 @@
     grid-template-columns: repeat(8, 75px);
     grid-template-rows: repeat(8, 75px);
     box-shadow: 5px 5px 20px;
-    animation: circular-float 5s linear infinite;    
+    animation: circular-float 7s linear infinite;    
     
 }
 

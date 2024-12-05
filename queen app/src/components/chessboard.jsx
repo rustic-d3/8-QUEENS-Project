@@ -1,17 +1,63 @@
 import './chessboard.css'
 import Tiles from './Tiles';
+function is_safe(row, column, board)
+    {
+    //checks the column
+        for(let i=0; i < 8; i++){
+            if(board[i][column]===1)
+            {
+                return false;
+            }
+        }
+    //checks the row
+        for(let i=0; i < 8; i++){
+            if(board[row][i]===1)
+            {
+                return false;
+            }
+        }
+        //checks the positive diagonal
+        for(let i = 0;  i < 8; i++) {
+            for(let j = 0; j < 8; j++) {
+                if((i-j === row-column)&&(board[i][j] === 1)) {
+                    return false;
+                    
+                }
+            }
+        }
+        //checks the negative diagonal
+        for(let i = 0;  i < 8; i++) {
+            for(let j = 0; j < 8; j++) {
+                if((i+j === row+column)&&(board[i][j] === 1)) {
+                    return false;
+                    
+                }
+            }
+        }
 
-let placement = [[1,0,0,0,0,0,0,0],
-                 [0,1,0,0,0,0,0,0],
-                 [0,0,1,0,0,0,0,0],
-                 [0,0,0,1,0,0,0,0],
-                 [0,0,0,0,1,0,0,0],
-                 [0,0,0,0,0,1,0,0],
-                 [0,0,0,0,0,0,1,0],
-                 [0,0,0,0,0,0,0,1]
+        return true;
+
+    }
+
+
+
+let placement = [[0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,0,0,0]
                 ]
 
 function Chessboard(){
+        
+
+   let result = is_safe(1, 3, placement);
+   console.log(result);
+
+
     let board = [];
     for(let i = 0; i<8; i++) {
         for(let j = 0; j < 8; j++) {
