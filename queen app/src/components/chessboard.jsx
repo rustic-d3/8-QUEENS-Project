@@ -2,20 +2,14 @@ import './chessboard.css'
 import Tiles from './Tiles';
 function is_safe(row, column, board)
     {
-    //checks the column
+    //checks the column and rows
         for(let i=0; i < 8; i++){
-            if(board[i][column]===1)
+            if(board[i][column]===1 || board[row][i]===1)
             {
                 return false;
             }
         }
-    //checks the row
-        for(let i=0; i < 8; i++){
-            if(board[row][i]===1)
-            {
-                return false;
-            }
-        }
+        
         //checks the positive diagonal
         for(let i = 0;  i < 8; i++) {
             for(let j = 0; j < 8; j++) {
@@ -42,7 +36,7 @@ function is_safe(row, column, board)
 
 
 let placement = [[0,0,0,0,0,0,0,0],
-                 [0,0,0,0,0,0,0,0],
+                 [0,0,0,0,0,,0,0],
                  [0,0,0,0,0,0,0,0],
                  [0,0,0,0,0,0,0,0],
                  [0,0,0,0,0,0,0,0],
