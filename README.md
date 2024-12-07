@@ -254,6 +254,7 @@ vite.config.js
 - React Official Documentation - [react.dev](https://react.dev).
 - Vite Documentation - [vitejs.dev](https://vitejs.dev).
 - "The 8 Queens Puzzle" - [Wikipedia](https://en.wikipedia.org/wiki/Eight_queens_puzzle).
+- "Mastering Backtracking Algorithms in JavaScript | N-Queens Problem Explained" - [Bug Ninza](https://www.youtube.com/watch?v=uBuxM5_9jFU&list=WL&index=2).
 
 ---
 
