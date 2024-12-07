@@ -15,6 +15,9 @@
 - [Implementation details](#implementation-details)
 - [Development Environment](#development-environment)
 - [Examples of Running the Application](#examples-of-running-the-application)
+- [Project Structure](#project-structure)
+- [Bibliography](#bibliography)
+- [Creator](#creator)
 
 ---
 
@@ -38,8 +41,62 @@
 
 - **Validating a position (`is_safe`)**:
   - The algorithm checks if placing a queen at a given position is valid by ensuring that no other queen exists in the same row, column, or diagonal.
+
+```javascript
+function is_safe(row, column, board) {
+  //checks the column and rows
+  for (let i = 0; i < 8; i++) {
+    if (board[i][column] === "1" || board[row][i] === "1") {
+      return false;
+    }
+  }
+
+  //checks the positive diagonal
+  for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      if (i - j === row - column && board[i][j] === "1") {
+        return false;
+      }
+    }
+  }
+  //checks the negative diagonal
+  for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      if (i + j === row + column && board[i][j] === "1") {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+```
+
 - **Backtracking (`solve`)**:
+
   - The backtracking function explores all possible positions for the queens, backtracking when a conflict occurs, and saving valid solutions to an array. It continues exploring until all solutions are found.
+
+  ```Javascript
+  function solve() {
+    let solutions = []; // this will be the array with multiple solutions
+    function backtrack(row) {
+        if(row === 8) {
+            solutions.push(placement.map(row => row.join('')));
+            return;
+        }
+
+        for(let col = 0; col < 8; col++) {
+            if(is_safe(row, col, placement)) {
+                placement[row][col] = "1";
+                backtrack(row+1); // backtrack to the next row
+                placement[row][col] = "0"; // reset the bad placement, and go to the next iteration
+            }
+        }
+    }
+    backtrack(0);
+    return solutions;
+    }
+  ```
 
 ### Components
 
@@ -89,6 +146,8 @@ The application is composed of several React components that work together to cr
 ### Code Implementation Overview
 
 The app starts by solving the 8 Queens problem using a recursive backtracking approach. The solution is represented in a 2D array where `"1"` indicates a queen's position, and `"0"` indicates an empty square. The backtracking function generates all possible solutions, which are then passed to the chessboard for visualization.
+
+![Code Board](./queen%20app/src/assets/images/codeboard.jpeg)
 
 ---
 
@@ -145,7 +204,12 @@ The app starts by solving the 8 Queens problem using a recursive backtracking ap
 ### Example Scenario
 
 - When the application is run, the user will see a chessboard with the first solution (queens placed in valid positions).
+  ![Solution1](./queen%20app/src/assets/images/solution1.jpeg)
+  ![Solution1](./queen%20app/src/assets/images/solution2.jpeg)
+
 - As the user clicks the "Next Solution" button, the app will navigate to the next valid configuration of queens on the board.
+
+![Solution1](./queen%20app/src/assets/images/buttons.jpeg)
 
 ---
 
