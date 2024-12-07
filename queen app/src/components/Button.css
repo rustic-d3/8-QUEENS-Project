@@ -1,3 +1,25 @@
+.cinzel-decorative-regular {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #D0BDE9;
+}
+
+.cinzel-decorative-bold {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #D0BDE9;
+
+}
+
+.cinzel-decorative-black {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #D0BDE9;
+}
+
 .buttons {
     display: flex;
     flex-direction: column;
@@ -5,11 +27,27 @@
     position: absolute;
     top: 50%;
     right: 10%;
-}
-.btn-1{
-    color: #9D48E7;
+    gap: 1rem;
 }
 
-.btn-2{
+.btn {
+    border: none;
+    padding: 1rem;
+    border-radius: 50px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
     color: #D0BDE9;
+    background-color:#9D48E7;
 }
+
+
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(155, 77, 255, 0.7), 0 0 20px rgba(155, 77, 255, 0.5);
+    transform: translateY(-5px);
+    color: #9D48E7;
+    background-color:#D0BDE9;
+
+}
+
