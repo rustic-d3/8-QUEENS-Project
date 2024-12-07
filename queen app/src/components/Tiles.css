@@ -7,11 +7,10 @@
 .black{
     background-image: url("../assets/images/black.jpg");
     background-size: cover;
-
 }
 
 .white, .black:hover {
     cursor: pointer;
-    border-color: #9b4dff; /* Soft purple color for the border */
+    border-color: #9b4dff; 
     box-shadow: 0 0 10px rgba(155, 77, 255, 0.7), 0 0 20px rgba(155, 77, 255, 0.5);
 }

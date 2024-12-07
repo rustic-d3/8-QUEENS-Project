@@ -1,8 +1,7 @@
 body {
-    background-color: #5A009F;
-    height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    width: 100%;
+    background-color: #5A009F;
 }

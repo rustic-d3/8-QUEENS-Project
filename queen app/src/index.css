@@ -13,6 +13,8 @@ body {
   line-height: 1.5;
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  width: 100vh;
+  height: 100vh;
 }
 
 /* 5. Improve media defaults */
@@ -44,4 +46,14 @@ h1, h2, h3, h4, h5, h6 {
 */
 #root, #__next {
   isolation: isolate;
+}
+
+#root{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%; 
+  background-color: #5A009F;
+  display: flex;
+  flex-direction: row;
 }
