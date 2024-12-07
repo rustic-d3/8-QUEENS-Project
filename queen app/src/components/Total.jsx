@@ -2,9 +2,9 @@ import "./Total.css";
 
 function Total({totalSolutions, solutionNumber}) {
     return (
-        <div className="informations">
-           <p>Total Solutions: {totalSolutions}</p>
-           <p>Solution number {solutionNumber+1}</p>
+        <div className="informations cinzel-decorative-bold">
+           <p>TOTAL SOLUTIONS: <span className="important">{totalSolutions}</span></p>
+           <p>SOLUTION NUMBER: <span className="important">{solutionNumber+1}</span></p>
         </div>
             
         
