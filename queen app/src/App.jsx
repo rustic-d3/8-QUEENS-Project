@@ -1,6 +1,7 @@
 import Chessboard from "./components/chessboard";
 import Total from "./components/Total";
 import Button from "./components/button";
+import Audio from "./components/Audio";
 import React, { useState } from "react";
 import "./App.css"
 function App() {
@@ -34,6 +35,7 @@ if(solutionData < 0) {
       <Total totalSolutions = {childData} solutionNumber = {solutionData}></Total>
       <Chessboard sendData = {total} sendSolution ={solutionData}></Chessboard>
       <Button solutionNext={nextSolution} solutionPrevious={previousSolution}></Button>
+      <Audio></Audio>
       
     </>
   )
