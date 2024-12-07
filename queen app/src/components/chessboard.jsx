@@ -68,14 +68,14 @@ function solve() {
 
 let solutions = solve();
 
-function Chessboard({sendData}){
+function Chessboard({sendData, sendSolution}){
     sendData(solutions.length);
 
     if (solutions.length === 0) {
         return <div>No solutions found!</div>; // Handle empty solutions case
     }
     let board = [];
-    let current_solution = solutions[1];
+    let current_solution = solutions[sendSolution];
     for(let i = 0; i < 8; i++) {
         for(let j = 0; j < 8; j++) {
             const sum = i+j;

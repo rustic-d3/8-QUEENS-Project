@@ -1,10 +1,13 @@
 import "./Total.css";
 
-function Total({totalSolutions}) {
+function Total({totalSolutions, solutionNumber}) {
     return (
-        <div>
-            Total Solutions: {totalSolutions}
+        <div className="informations">
+           <p>Total Solutions: {totalSolutions}</p>
+           <p>Solution number {solutionNumber+1}</p>
         </div>
+            
+        
     )
 }
 
