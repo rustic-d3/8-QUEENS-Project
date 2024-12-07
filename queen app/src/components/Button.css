@@ -1,4 +1,8 @@
 .buttons {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    right: 10%;
 }
