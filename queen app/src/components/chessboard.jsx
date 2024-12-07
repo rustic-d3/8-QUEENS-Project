@@ -32,22 +32,8 @@ function is_safe(row, column, board)
         return true;
     }
 
-
-    
-
-let placement = [["0","0","0","0","0","0","0","0"],
-                 ["0","0","0","0","0","0","0","0"],
-                 ["0","0","0","0","0","0","0","0"],
-                 ["0","0","0","0","0","0","0","0"],
-                 ["0","0","0","0","0","0","0","0"],
-                 ["0","0","0","0","0","0","0","0"],
-                 ["0","0","0","0","0","0","0","0"],
-                 ["0","0","0","0","0","0","0","0"]
-                ];
-
-
-function solve() {
-    let solutions = [];
+    function solve() {
+    let solutions = []; // this will be the array with multiple solutions
     function backtrack(row) {
         if(row === 8) {
             solutions.push(placement.map(row => row.join('')));
@@ -57,8 +43,8 @@ function solve() {
         for(let col = 0; col < 8; col++) {
             if(is_safe(row, col, placement)) {
                 placement[row][col] = "1";
-                backtrack(row+1);
-                placement[row][col] = "0";
+                backtrack(row+1); // backtrack to the next row
+                placement[row][col] = "0"; // reset the bad placement, and go to the next iteration
             }
         }
     }
@@ -66,16 +52,28 @@ function solve() {
     return solutions;
 }
 
+
+let placement = [["0","0","0","0","0","0","0","0"],
+                 ["0","0","0","0","0","0","0","0"],
+                 ["0","0","0","0","0","0","0","0"],
+                 ["0","0","0","0","0","0","0","0"],
+                 ["0","0","0","0","0","0","0","0"],
+                 ["0","0","0","0","0","0","0","0"],
+                 ["0","0","0","0","0","0","0","0"],
+                 ["0","0","0","0","0","0","0","0"]
+                ]; // I could use a better solution for creating this array, but it is like this for visualisation purposes
+
 let solutions = solve();
 
-function Chessboard({sendData, sendSolution}){
+function Chessboard({sendData, sendSolution}) {
     sendData(solutions.length);
+    let board = []; // the board that will be displayed 
+    let current_solution = solutions[sendSolution];
 
     if (solutions.length === 0) {
         return <div>No solutions found!</div>; // Handle empty solutions case
     }
-    let board = [];
-    let current_solution = solutions[sendSolution];
+
     for(let i = 0; i < 8; i++) {
         for(let j = 0; j < 8; j++) {
             const sum = i+j;
